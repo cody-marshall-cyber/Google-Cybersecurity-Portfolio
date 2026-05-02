@@ -1,4 +1,4 @@
-# Security Risk Assessment Report: Network Hardening Phase
+# Security Risk Assessment Report: Network Hardening Report
 
 **Date:** May 2, 2026
 **Analyst:** Marshall_C
