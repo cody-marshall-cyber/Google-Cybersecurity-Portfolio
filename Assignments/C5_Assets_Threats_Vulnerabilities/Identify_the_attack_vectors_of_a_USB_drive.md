@@ -1,4 +1,4 @@
-# [SECURITY INVESTIGATION REPORT: C5-USB-BAITING]
+# [SECURITY INVESTIGATION REPORT: USB-BAITING]
 **Analyst:** marshall_c  
 **Date:** May 3, 2026  
 **Case Reference:** [Rhetorical Hospital / Jorge Bailey Incident]  
