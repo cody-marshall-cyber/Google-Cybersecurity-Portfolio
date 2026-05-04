@@ -1,1 +1,1 @@
-installing apps using Linux
+configuring environments using Linux
