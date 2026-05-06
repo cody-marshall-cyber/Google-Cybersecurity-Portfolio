@@ -1,4 +1,4 @@
-# Portfolio Activity: C4_M3_L4_Manage_Authorization
+# Lab Report: Manage Authorization
 
 ## Scenario
 As a security analyst for a research team, I am responsible for auditing and managing file permissions within the `/home/researcher2/projects` directory. The goal is to enforce the **Principle of Least Privilege**, ensuring that sensitive research data is only accessible to authorized users and groups, while explicitly removing unauthorized access for "others."
