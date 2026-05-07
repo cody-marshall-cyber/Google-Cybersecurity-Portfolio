@@ -59,7 +59,6 @@ Use the most appropriate Linux command with the keywords `create new group` to i
 
 **Explanation:**
 The terminal evidence captures the final audit sequence. I first transitioned out of the `useradd` manual; though I initially entered incorrect exit syntax (upper-case 'Q'), I successfully returned to the prompt. I then executed `whatis rm` and `whatis rmdir` to differentiate their functions, confirming that `rm` handles files and directories generally, while `rmdir` is specialized for empty directories.
-
 Finally, to identify a tool for group management, I utilized `apropos -a create new group`. After correcting an initial syntax error where the command was misspelled, the search successfully identified `groupadd (8)` as the correct administrative utility for creating new groups.
 ---
 
