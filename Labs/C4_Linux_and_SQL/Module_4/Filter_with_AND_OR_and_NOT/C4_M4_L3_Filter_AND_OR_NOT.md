@@ -13,10 +13,10 @@ The objective is to isolate failed authentication events occurring after standar
 SELECT * FROM log_in_attempts WHERE login_time > '18:00' AND success = 0;
 ```
 
-**![Evidence](C4_M4_L3_Task1_Success_Logins)**
+**![Evidence](C4_M4_L3_Task1_Success_Logins.png)**
 *Initial baseline audit: Retrieving successful logins after 18:00 to establish normal late-hour activity patterns.*
 
-**![Evidence](C4_M4_L3_Task1_Failed_Logins)**
+**![Evidence](C4_M4_L3_Task1_Failed_Logins.png)**
 *Risk Identification: Isolating 19 unsuccessful attempts occurring after hours for further forensic scrutiny.*
 
 **Technical Analysis:**
@@ -32,10 +32,10 @@ The objective is to investigate a suspicious event by retrieving all authenticat
 SELECT * FROM log_in_attempts WHERE login_date = '2022-05-09' OR login_date = '2022-05-08';
 ```
 
-**![Evidence](C4_M4_L3_Task2_Login_Dates_Initial)**
+**![Evidence](C4_M4_L3_Task2_Login_Dates_Initial.png)**
 *Initial forensic sweep: Capturing the first segment of authentication attempts for the May 8th and May 9th window.*
 
-**![Evidence](C4_M4_L3_Task2_Login_Dates_Full)**
+**![Evidence](C4_M4_L3_Task2_Login_Dates_Full.png)**
 *Complete dataset verification: Confirming 75 total records were retrieved for the 48-hour investigation period.*
 
 **Technical Analysis:**
@@ -51,10 +51,10 @@ The objective is to isolate authentication attempts originating from outside of 
 SELECT * FROM log_in_attempts WHERE NOT country LIKE 'mex%';
 ```
 
-**![Evidence](C4_M4_L3_Task3_Non_Mexico_Logins_Initial)**
+**![Evidence](C4_M4_L3_Task3_Non_Mexico_Logins_Initial.png)**
 *Initial geo-filter audit: The first attempt resulted in a syntax error (ERROR 1064) due to the omission of the NOT operator. The corrected query successfully began filtering out 'MEX' and 'MEXICO' entries.*
 
-**![Evidence](C4_M4_L3_Task3_Non_Mexico_Logins_Full)**
+**![Evidence](C4_M4_L3_Task3_Non_Mexico_Logins_Full.png)**
 *Global traffic verification: Confirmed 144 total records originating from countries other than Mexico, providing a targeted dataset for external threat hunting.*
 
 **Technical Analysis:**
@@ -70,7 +70,7 @@ The objective is to identify all employees within the Marketing department who a
 SELECT * FROM employees WHERE department = 'Marketing' AND office LIKE 'East%';
 ```
 
-**![Evidence](C4_M4_L3_Task4_Marketing_East_Building)**
+**![Evidence](C4_M4_L3_Task4_Marketing_East_Building.png)**
 *Targeted Audit: After an initial logic error (resulting in an empty set and 5 warnings), the corrected query successfully isolated 7 employees matching both the departmental and building location criteria.*
 
 **Technical Analysis:**
@@ -86,10 +86,10 @@ The objective is to gather comprehensive records for all personnel within the Fi
 SELECT * FROM employees WHERE department = 'Finance' OR department = 'Sales';
 ```
 
-**![Evidence](C4_M4_L3_Task5_Finance_Sales_Initial)**
+**![Evidence](C4_M4_L3_Task5_Finance_Sales_Initial.png)**
 *Initial Multi-Department Audit: Successfully initiating the retrieval of employee data for both Finance and Sales units using the OR operator.*
 
-**![Evidence](C4_M4_L3_Task5_Finance_Sales_Full)**
+**![Evidence](C4_M4_L3_Task5_Finance_Sales_Full.png)**
 *Update List Verification: Confirming a final count of 71 employees requiring the specific departmental update.*
 
 **Technical Analysis:**
@@ -105,10 +105,10 @@ The objective is to identify all employees outside of the Information Technology
 SELECT * FROM employees WHERE NOT department LIKE 'Information Technology';
 ```
 
-**![Evidence](C4_M4_L3_Task6_Non_IT_Employees_Initial)**
+**![Evidence](C4_M4_L3_Task6_Non_IT_Employees_Initial.png)**
 *Exclusion Audit: The initial phase was hindered by syntax errors, including a typo in the FROM keyword ("fome"). Once corrected, the NOT operator successfully began isolating non-IT personnel.*
 
-**![Evidence](C4_M4_L3_Task6_Non_IT_Employees_Full)**
+**![Evidence](C4_M4_L3_Task6_Non_IT_Employees_Full.png)**
 *Final Rollout Verification: Confirmed 161 total records for employees in all departments except Information Technology, completing the data gathering for the update cycle.*
 
 **Technical Analysis:**
