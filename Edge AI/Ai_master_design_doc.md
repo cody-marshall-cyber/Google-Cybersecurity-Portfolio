@@ -77,7 +77,6 @@ To maintain an immutable, easily reproducible environment, the software layer co
 
 The operational lifecycle of a user query follows a strict, hardware-isolated execution pipeline to guarantee absolute data privacy and deterministic processing throughput:
 
-'''text
 [User Interface / Client]
        │
        ▼ (HTTPS / Local Network Only)
@@ -93,7 +92,6 @@ The operational lifecycle of a user query follows a strict, hardware-isolated ex
        │
        ▼ (Token Streaming Output)
 [Ollama Engine] ──► [Nginx Proxy] ──► [User Terminal Interface]
-'''
 
 ### 5.1 Step-by-Step Execution Lifecycle
 1. **Ingress**: The client sends a prompt over a local network connection. The connection is intercepted by the Nginx reverse proxy to verify access permissions via TLS 1.3 certificates and IP whitelisting.
@@ -104,8 +102,6 @@ The operational lifecycle of a user query follows a strict, hardware-isolated ex
 ---
 
 ## 6. Network Topology
-
-'''text
 ┌────────────────────────┐
 │    2TB External HDD    │ (Model / Vector Vault)
 └───────────┬────────────┘
@@ -123,7 +119,6 @@ The operational lifecycle of a user query follows a strict, hardware-isolated ex
 │ • Small Model Inference      │          │ • Continuous Environmental   │
 │ • Local Vector Embedding     │          │   Log Monitoring             │
 └──────────────────────────────┘          └──────────────────────────────┘
-'''
 
 ---
 
